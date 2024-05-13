@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../style/fonts/TTLakes-Regular.eot');
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('../style/fonts/TTLakes-Regular.eot?#iefix')
+            format('embedded-opentype'),
+        url('../style/fonts/TTLakes-Regular.woff') format('woff'),
+        url('../style/fonts/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../style/fonts/TTLakes-Medium.eot');
+    src: local('TT Lakes Medium'), local('TTLakes-Medium'),
+        url('../style/fonts/TTLakes-Medium.eot?#iefix')
+            format('embedded-opentype'),
+        url('../style/fonts/TTLakes-Medium.woff') format('woff'),
+        url('../style/fonts/TTLakes-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../style/fonts/TTLakes-Bold.eot');
+    src: local('TT Lakes Bold'), local('TTLakes-Bold'),
+        url('../style/fonts/TTLakes-Bold.eot?#iefix')
+            format('embedded-opentype'),
+        url('../style/fonts/TTLakes-Bold.woff') format('woff'),
+        url('../style/fonts/TTLakes-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'TT Lakes', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper__slider {
+    box-sizing: border-box;
+    height: 250px;
+    overflow: hidden;
+    background-color: #dddddd;
+    border-top: 1px solid #d9fff5;
+}
+
+.title {
+    height: 80px;
+    background: linear-gradient(to right, #dddddd 0%, #fff 50%);
+}
+
+.wrapper__slider__title {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: none;
+}
+
+.title__text {
+    font-weight: 400;
+    font-size: 16px;
+    color: #7e7e82;
+    padding-left: 16px;
+}
+
+.sviper-wrapper {
+    /* display: block; */
+    padding-top: 16px;
+}
+
+.swiper-slide,
+.container__slide {
+    margin-top: 16px;
+    width: auto;
+}
+
+.slide:first-child {
+    margin-left: 16px;
+}
+
+/* .slider-box {
+    margin: auto;
+} */
+
+.slider-box-img,
+.slide__box__img {
+    display: inline-block;
+    width: 245px;
+    height: 75px;
+}
+
+.lenovo {
+    background: url('../style/img/lenovo.png') no-repeat;
+    background-size: contain;
+}
+
+.sony {
+    background: url('../style/img/sony.png') no-repeat;
+    background-size: contain;
+}
+
+.samsung {
+    background: url('../style/img/samsung.png') no-repeat;
+    /* width: 245px; */
+    /* padding: 0; */
+    /* background-size: contain; */
+}
+
+.acer {
+    background: url('../style/img/acer.png') no-repeat;
+    background-size: contain;
+}
+
+.apple {
+    background: url('../style/img/apple.png') no-repeat;
+    background-size: contain;
+}
+
+.bosh {
+    background: url('../style/img/bosh.png') no-repeat;
+    background-size: contain;
+}
+
+.hp {
+    background: url('../style/img/hp.png') no-repeat;
+    background-size: contain;
+}
+
+.viesonic {
+    background: url('../style/img/viewsonic.png') no-repeat;
+    background-size: contain;
+}
+
+.swiper-pagination-bullet {
+    position: relative;
+    top: -255px;
+    width: 15px;
+    height: 15px;
+    margin-right: 20px !important;
+}
+
+.swiper-pagination-bullet-horizontal {
+    margin-right: 16px;
+}
+
+.swiper-pagination-bullet-active {
+    background: #7e7e82;
+}
+
+.wrapper__slider__btn {
+    display: none;
+}
+
+@media (768px <= width < 1120px) {
+    .wrapper__slider {
+        /* min-width: 768px; */
+        /* max-width: 910px; */
+        min-height: 300px;
+    }
+
+    .title {
+        height: 56px;
+    }
+
+    .title__text {
+        padding-left: 24px;
+    }
+
+    .swiper-container {
+        display: none;
+    }
+
+    .container {
+        padding: 22px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        max-width: 940px;
+        margin: auto;
+    }
+
+    .container__slide {
+        margin: 0;
+    }
+
+    .slide__box__img {
+        width: 240px;
+        height: 72px;
+    }
+
+    .samsung {
+        background-position: -5px 0;
+        /* width: 240px; */
+    }
+
+    .slide:first-child {
+        margin-left: 0;
+    }
+
+    .swiper-pagination-bullets {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .wrapper__slider__btn {
+        display: block;
+        border: none;
+        background-color: #ddd;
+        padding-left: 24px;
+    }
+
+    .wrapper__slider__btn:hover {
+        cursor: pointer;
+    }
+
+    .btn-show::before {
+        position: relative;
+        content: url('../style/img/expand.png');
+        top: 30px;
+        cursor: pointer;
+        top: 7px;
+        left: -10px;
+    }
+
+    .btn-hide::before {
+        position: relative;
+        content: url('../style/img/expandtwo.png');
+        top: 30px;
+        cursor: pointer;
+        top: 7px;
+        left: -10px;
+    }
+}
+
+@media (1120px <= width) {
+    .wrapper__slider {
+        /* box-sizing: content-box; */
+        min-width: 1120px;
+        min-height: 300px;
+    }
+
+    .title__text {
+        padding-left: 32px;
+    }
+
+    .title {
+        height: 56px;
+    }
+
+    .swiper-container {
+        display: none;
+    }
+
+    .container {
+        padding: 24px 32px 24px 32px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1120px;
+        margin: auto;
+    }
+
+    .container__slide {
+        margin: 0;
+    }
+
+    .slide__box__img {
+        width: 240px;
+        height: 72px;
+    }
+
+    .slide:first-child {
+        margin-left: 0;
+    }
+
+    .swiper-pagination-bullets {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .wrapper__slider__btn {
+        display: block;
+        border: none;
+        background-color: #ddd;
+        padding-left: 32px;
+    }
+
+    .wrapper__slider__btn:hover {
+        cursor: pointer;
+    }
+
+    .btn-show::before {
+        position: relative;
+        content: url('../style/img/expand.png');
+        top: 30px;
+        cursor: pointer;
+        top: 7px;
+        left: -10px;
+    }
+
+    .btn-hide::before {
+        position: relative;
+        content: url('../style/img/expandtwo.png');
+        top: 30px;
+        cursor: pointer;
+        top: 7px;
+        left: -10px;
+    }
+}
