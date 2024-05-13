@@ -1,7 +1,5 @@
 let container = document.querySelector('.container');
 let containerChild = container.children;
-// let temp = document.querySelector('#template').content;
-// let item = temp.querySelector('.swiper-slide');
 let btn = document.querySelector('.wrapper__slider__btn');
 let wrapper = document.querySelector('.wrapper__slider');
 let width = window.innerWidth;
@@ -10,16 +8,6 @@ window.addEventListener('resize', () => {
     width = window.innerWidth;
 
     chekenChildren();
-
-    // if (width > 768 && width < 1120) {
-    //     containerChild[6].classList.add('hidden');
-    //     containerChild[7].classList.add('hidden');
-    // }
-
-    // if (width >= 1120) {
-    //     containerChild[6].classList.remove('hidden');
-    //     containerChild[7].classList.remove('hidden');
-    // }
 });
 
 btn.addEventListener('click', function () {
