@@ -6,14 +6,11 @@ let btn = document.querySelector('.wrapper__slider__btn');
 let wrapper = document.querySelector('.wrapper__slider');
 let width = window.innerWidth;
 
-
-
 window.addEventListener('resize', () => {
-
     width = window.innerWidth;
 
-    chekenChildren()
-   
+    chekenChildren();
+
     // if (width > 768 && width < 1120) {
     //     containerChild[6].classList.add('hidden');
     //     containerChild[7].classList.add('hidden');
@@ -23,7 +20,6 @@ window.addEventListener('resize', () => {
     //     containerChild[6].classList.remove('hidden');
     //     containerChild[7].classList.remove('hidden');
     // }
-    
 });
 
 btn.addEventListener('click', function () {
@@ -53,7 +49,6 @@ btn.addEventListener('click', function () {
 });
 
 function chekenChildren() {
-
     if (width > 768 && width < 1120) {
         containerChild[6].classList.add('hidden');
         containerChild[7].classList.add('hidden');
@@ -63,6 +58,6 @@ function chekenChildren() {
         containerChild[6].classList.remove('hidden');
         containerChild[7].classList.remove('hidden');
     }
-};
+}
 
 chekenChildren();
