@@ -1,36 +1,37 @@
-let container = document.querySelector('.container');
-let containerChild = container.children;
-let btn = document.querySelector('.wrapper__slider__btn');
-let wrapper = document.querySelector('.wrapper__slider');
+const container = document.querySelector('.box__container');
+const containerChild = container.children;
+const btn = document.querySelector('.wrapper__sliders__btn');
+const wrapper = document.querySelector('.wrapper__sliders');
 let width = window.innerWidth;
 
 window.addEventListener('resize', () => {
     width = window.innerWidth;
-
-    chekenChildren();
+    if (width >= 768) {
+        chekenChildren();
+    }
 });
 
 btn.addEventListener('click', function () {
-    if (btn.textContent === 'Показать всё') {
-        wrapper.style.height = '450px';
-        btn.textContent = 'Скрыть';
-        btn.className = 'wrapper__slider__btn btn-hide';
+    if (btn.className.includes('btn-show')) {
+        wrapper.classList.add('wrapper-show-more')
+        btn.classList.remove('btn-show');
+        btn.classList.add('btn-hide');
         for (let i = 0; i < containerChild.length; i++) {
             if (containerChild[i].className.includes('hidden')) {
-                containerChild[i].className = 'container__slide slide';
+                containerChild[i].classList.remove('hidden');
             }
         }
     } else {
-        wrapper.style.height = '300px';
-        btn.textContent = 'Показать всё';
-        btn.className = 'wrapper__slider__btn btn-show';
+        wrapper.classList.remove('wrapper-show-more')
+        btn.classList.add('btn-show');
+        btn.classList.remove('btn-hide');
         for (let i = 0; i < containerChild.length; i++) {
             if (i >= 6 && width < 1120) {
-                containerChild[i].className = 'container__slide slide hidden';
+                containerChild[i].classList.add('hidden');
             }
 
             if (width > 1120 && i >= 8) {
-                containerChild[i].className = 'container__slide slide hidden';
+                containerChild[i].classList.add('hidden');
             }
         }
     }
@@ -46,6 +47,8 @@ function chekenChildren() {
         containerChild[6].classList.remove('hidden');
         containerChild[7].classList.remove('hidden');
     }
+
+
 }
 
 chekenChildren();

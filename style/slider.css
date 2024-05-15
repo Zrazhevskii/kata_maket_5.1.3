@@ -40,7 +40,7 @@ body {
     padding: 0;
 }
 
-.wrapper__slider {
+.wrapper__sliders {
     box-sizing: border-box;
     height: 250px;
     overflow: hidden;
@@ -53,14 +53,18 @@ body {
     background: linear-gradient(to right, #dddddd 0%, #fff 50%);
 }
 
-.wrapper__slider__title {
+.wrapper__sliders__title {
     display: flex;
     align-items: center;
 }
 
+/* .swiper-wrapper {
+    display: block;
+}
+
 .container {
     display: none;
-}
+} */
 
 .title__text {
     font-weight: 400;
@@ -69,18 +73,23 @@ body {
     padding-left: 16px;
 }
 
-.sviper-wrapper {
-    /* display: block; */
+/* .sviper-slides {
+    display: block;
     padding-top: 16px;
-}
+} */
 
-.swiper-slide,
+/* .box__container {
+    padding-top: 16px;
+} */
+
+/* .slide, */
 .container__slide {
+    /* display: block; */
     margin-top: 16px;
     width: auto;
 }
 
-.slide:first-child {
+.container__slide:first-child {
     margin-left: 16px;
 }
 
@@ -88,11 +97,10 @@ body {
     margin: auto;
 } */
 
-.slider-box-img,
 .slide__box__img {
-    display: inline-block;
-    width: 245px;
-    height: 75px;
+    display: block;
+    width: 240px;
+    height: 72px;
 }
 
 .lenovo {
@@ -107,9 +115,7 @@ body {
 
 .samsung {
     background: url('../style/img/samsung.png') no-repeat;
-    /* width: 245px; */
-    /* padding: 0; */
-    /* background-size: contain; */
+    background-position: -5px 0;
 }
 
 .acer {
@@ -139,7 +145,7 @@ body {
 
 .swiper-pagination-bullet {
     position: relative;
-    top: -255px;
+    top: -333px;
     width: 15px;
     height: 15px;
     margin-right: 20px !important;
@@ -153,14 +159,16 @@ body {
     background: #7e7e82;
 }
 
-.wrapper__slider__btn {
+.wrapper__sliders__btn {
     display: none;
 }
 
+.wrapper-show-more {
+    height: 440px;
+}
+
 @media (768px <= width < 1120px) {
-    .wrapper__slider {
-        /* min-width: 768px; */
-        /* max-width: 910px; */
+    .wrapper__sliders {
         min-height: 300px;
     }
 
@@ -172,37 +180,35 @@ body {
         padding-left: 24px;
     }
 
-    .swiper-container {
+    .swiper-container, .swiper-wrapper, .swiper-slide {
         display: none;
     }
 
-    .container {
-        padding: 22px;
+    .box {
+        display: block;
+        padding: 24px 24px 0 24px;
+    }
 
+    .box__container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-
-        max-width: 940px;
+        max-width: 910px;
         margin: auto;
     }
 
     .container__slide {
-        margin: 0;
-    }
-
-    .slide__box__img {
-        width: 240px;
-        height: 72px;
+        display: block;
+        margin: 0 !important;
+        padding-bottom: 16px;
     }
 
     .samsung {
         background-position: -5px 0;
-        /* width: 240px; */
     }
 
-    .slide:first-child {
+    .container__slide:first-child {
         margin-left: 0;
     }
 
@@ -214,39 +220,61 @@ body {
         display: none;
     }
 
-    .wrapper__slider__btn {
-        display: block;
+    .wrapper__sliders__btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         border: none;
         background-color: #ddd;
         padding-left: 24px;
     }
 
-    .wrapper__slider__btn:hover {
+    .wrapper__sliders__btn:hover {
         cursor: pointer;
     }
 
     .btn-show::before {
         position: relative;
-        content: url('../style/img/expand.png');
-        top: 30px;
-        cursor: pointer;
-        top: 7px;
-        left: -10px;
+        display: block;
+        content: '';
+        background: url('../style/img/expand.png') no-repeat;
+        width: 24px;
+        height: 24px;
+        /* cursor: pointer; */
+        margin-right: 10px;
+    }
+
+    .btn-show::after {
+        content: 'Показать всё';
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        position: relative;
     }
 
     .btn-hide::before {
         position: relative;
-        content: url('../style/img/expandtwo.png');
-        top: 30px;
-        cursor: pointer;
-        top: 7px;
-        left: -10px;
+        display: block;
+        content: '';
+        background: url('../style/img/expand.png') no-repeat;
+        transform: rotate(180deg);
+        width: 24px;
+        height: 24px;
+        /* left: -6px; */
+        margin-right: 10px;
+    }
+
+    .btn-hide::after {
+        content: 'Скрыть';
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        position: relative;
     }
 }
 
 @media (1120px <= width) {
-    .wrapper__slider {
-        /* box-sizing: content-box; */
+    .wrapper__sliders {
         min-width: 1120px;
         min-height: 300px;
     }
@@ -259,12 +287,16 @@ body {
         height: 56px;
     }
 
-    .swiper-container {
+    .swiper-container, .swiper-wrapper, .swiper-slide {
         display: none;
     }
 
-    .container {
-        padding: 24px 32px 24px 32px;
+    .box {
+        display: block;
+        padding: 24px 32px 0 32px;
+    }
+
+    .box__container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -274,15 +306,16 @@ body {
     }
 
     .container__slide {
-        margin: 0;
+        display: block;
+        margin: 0 !important;
+        padding-bottom: 16px;
     }
 
-    .slide__box__img {
-        width: 240px;
-        height: 72px;
+    .samsung {
+        background-position: -5px 0;
     }
 
-    .slide:first-child {
+    .container__slide:first-child {
         margin-left: 0;
     }
 
@@ -294,32 +327,53 @@ body {
         display: none;
     }
 
-    .wrapper__slider__btn {
-        display: block;
+    .wrapper__sliders__btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         border: none;
         background-color: #ddd;
         padding-left: 32px;
     }
 
-    .wrapper__slider__btn:hover {
+    .wrapper__sliders__btn:hover {
         cursor: pointer;
     }
 
     .btn-show::before {
         position: relative;
-        content: url('../style/img/expand.png');
-        top: 30px;
-        cursor: pointer;
-        top: 7px;
-        left: -10px;
+        display: block;
+        content: '';
+        background: url('../style/img/expand.png') no-repeat;
+        width: 24px;
+        height: 24px;
+        left: -5px;
+    }
+
+    .btn-show::after {
+        content: 'Показать всё';
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        position: relative;
     }
 
     .btn-hide::before {
         position: relative;
-        content: url('../style/img/expandtwo.png');
-        top: 30px;
-        cursor: pointer;
-        top: 7px;
-        left: -10px;
+        display: block;
+        content: '';
+        background: url('../style/img/expand.png') no-repeat;
+        transform: rotate(180deg);
+        width: 24px;
+        height: 24px;
+        left: -5px;
+    }
+
+    .btn-hide::after {
+        content: 'Скрыть';
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        position: relative;
     }
 }
