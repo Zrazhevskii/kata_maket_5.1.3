@@ -1,15 +1,3 @@
-// new Swiper('.swiper-container', {
-//     pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//     },
-//     slidesPerView: 'auto',
-//     spaceBetween: 16,
-//     loop: true,
-//     watchOverflow: true,
-//     breakpoints: { 320: { enabled: true }, 768: { enabled: false } },
-// });
-
 const slider = document.querySelector('.swiper-container');
 const pagination = document.querySelector('.swiper-pagination');
 let { clientWidth } = document.body;
@@ -23,7 +11,8 @@ const sliderInit = () => {
             clickable: true,
         },
         slidesPerView: 'auto',
-        spaceBetween: 16,
+        spaceBetween: 20,
+        freeMode: true,
         loop: true,
     })
 }

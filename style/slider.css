@@ -152,36 +152,7 @@ body {
     display: none;
 }
 
-/* .close {
-    visibility: hidden;
-    order: -10;
-} */
-
 @media (768px <= width < 1120px) {
-    /* .hidden-show {
-        display: none;
-    } */
-
-    /* .container__slide:last-child {
-        display: none;
-    } */
-
-    /* .slide__box__img__hidden {
-        order: -2;
-        background: url('../style/img/viewsonic.png') no-repeat;
-    } */
-
-    /* .hidden-show {
-        display: block; */
-    /* order: -2; */
-    /* background: url('../style/img/viewsonic.png') no-repeat; */
-    /* display: block; */
-    /* float: right;
-        display: contents;
-        position: absolute;
-        visibility: hidden; */
-    /* } */
-
     .wrapper__sliders {
         min-height: 300px;
     }
@@ -216,21 +187,8 @@ body {
         margin: auto;
     }
 
-    /* .box__container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 910px;
-        margin: auto;
-        position: relative;
-        order: 10;
-    } */
-
     .container__slide {
         display: block;
-        /* position: relative;
-        order: 9; */
         margin: 0 !important;
         padding-bottom: 16px;
     }
@@ -248,10 +206,6 @@ body {
     .container__slide:first-child {
         margin-left: 0;
     }
-
-    /* .container__slide:last-child {
-        margin-right: auto !important;
-    }; */
 
     .swiper-pagination-bullets {
         display: none;
@@ -275,10 +229,6 @@ body {
         cursor: pointer;
     }
 
-    /* .btn-show {
-       
-    } */
-
     .btn-show::before {
         position: relative;
         display: block;
@@ -299,7 +249,6 @@ body {
         content: 'Показать всё';
         font-size: 16px;
         font-weight: 500;
-        /* margin-right: 5px; */
         color: black;
         position: relative;
         top: -177px;
@@ -363,15 +312,6 @@ body {
         row-gap: 16px;
         margin: auto;
     }
-
-    /* .box__container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 1120px;
-        margin: auto;
-    } */
 
     .container__slide {
         display: block;
@@ -459,8 +399,4 @@ body {
     .hidden {
         display: none;
     }
-
-    /* .hidden-box {
-        visibility: hidden;
-    } */
 }
