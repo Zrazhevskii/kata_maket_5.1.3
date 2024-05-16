@@ -15,9 +15,7 @@ window.addEventListener('resize', () => {
 
 
 btn.addEventListener('click', function () {
-    let nameClass = btn.className.split(' ').find(item => item === 'btn-show');
-
-    if (nameClass !== undefined) {
+    if (btn.classList.contains('btn-show')) {
         changeHeightOpen();
     } else {
         changeHeightClose();
