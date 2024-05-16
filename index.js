@@ -13,8 +13,11 @@ window.addEventListener('resize', () => {
     }
 });
 
+
 btn.addEventListener('click', function () {
-    if (btn.className.includes('btn-show')) {
+    let nameClass = btn.className.split(' ').find(item => item === 'btn-show');
+
+    if (nameClass !== undefined) {
         changeHeightOpen();
     } else {
         changeHeightClose();
@@ -76,7 +79,6 @@ const changeHeightClose = () => {
         wrapper.classList.remove('wrapper-show-more-small');
         for (let i = 0; i < containerSlider.length; i++) {
             if (i >= 8) {
-                console.log(containerSlider[i]);
                 containerSlider[i].classList.add('hidden');
             }
         }
